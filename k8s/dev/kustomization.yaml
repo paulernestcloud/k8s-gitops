@@ -13,4 +13,5 @@ labels:
     env: dev
 images:
 - name: paulernestcloud/k8s-gitops
-  newName: 5b6d24a2f09bad9a23c317e7c9c91c363ba3413c
+  newName: paulernestcloud/k8s-gitops
+  newTag: f9210b88bb0d885b3e52f58e45adea29f091e54a
