@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: paulernestcloud/backend:v8
+          image: paulernestcloud/k8s-gitops
           ports:
             - containerPort: 3000
           env:

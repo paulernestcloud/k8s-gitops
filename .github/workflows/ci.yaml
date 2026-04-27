@@ -23,3 +23,13 @@ jobs:
           context: ./backend
           push: true
           tags: paulernestcloud/k8s-gitops:${{ github.sha }}
+
+      - name: Update Kustomize Image
+        run: |
+          cd k8s/dev
+          kustomize edit set image paulernestcloud/k8s-gitops=${{ github.sha }}
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add kustomization.yaml
+          git commit -m "Update image to ${{ github.sha }}"
+          git push
