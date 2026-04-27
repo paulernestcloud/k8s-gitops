@@ -2,16 +2,17 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- ../base/backend
-- ../base/mysql
+  - ../base/backend
+  - ../base/mysql
+  - ./ingress.yaml
 
 namespace: dev
 
 labels:
-- includeSelectors: true
-  pairs:
-    env: dev
+  - includeSelectors: true
+    pairs:
+      env: dev
 images:
-- name: paulernestcloud/k8s-gitops
-  newName: paulernestcloud/k8s-gitops
-  newTag: 5fc530ef0f1d22c9028db97557515e6df24d2580
+  - name: paulernestcloud/k8s-gitops
+    newName: paulernestcloud/k8s-gitops
+    newTag: f9210b88bb0d885b3e52f58e45adea29f091e54a
