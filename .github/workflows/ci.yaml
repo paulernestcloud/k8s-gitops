@@ -1,9 +1,13 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: Build and Push Backend
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: ["main"]
+
 jobs:
   build:
     runs-on: ubuntu-latest
